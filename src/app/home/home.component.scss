@@ -1,0 +1,15 @@
+.landing-page{
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/cover.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem;
+    h1{
+        font-weight: 500;
+    }
+    button{
+        margin-top: 10px;
+    }
+}
