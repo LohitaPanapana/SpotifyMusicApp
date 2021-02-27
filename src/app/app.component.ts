@@ -1,5 +1,6 @@
-import { SearchService } from './search.service';
 import { Component } from '@angular/core';
+import { SpotifyService } from './service/spotify.service';
+import { User } from './spotify';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SpotifyMusicApp';
-  constructor(private authService: SearchService){}
+  user: User;
+  accessToken: any;
+  constructor(private service: SpotifyService) { }
 
-  ngOnInit(){
-    // this.authService.authorize().subscribe(data => console.log(data));
+  ngOnInit(): void {
+    this.service.accessToken.subscribe(token => {
+      this.accessToken = token;
+      if(token){
+        this.service.getCurrentUserDetails().subscribe(userData => {
+          this.user = userData;
+        });
+      }
+    });
+
+    
   }
 }
