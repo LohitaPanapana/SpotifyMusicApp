@@ -1,3 +1,4 @@
+import { SearchService } from './search.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SpotifyMusicApp';
+  constructor(private authService: SearchService){}
+
+  ngOnInit(){
+    // this.authService.authorize().subscribe(data => console.log(data));
+  }
 }
