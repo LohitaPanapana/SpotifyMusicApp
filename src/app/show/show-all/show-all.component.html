@@ -1,0 +1,15 @@
+<div class="show-all">
+    <div class="container">
+        <div class="header mb-2">
+            <h4>
+                <a href="" class="btn btn-secondary"><</a>
+                All {{ type }} for "{{ query }}"
+            </h4>
+        </div>
+        <div class="row">
+            <div class="col mb-2" *ngFor="let item of data">
+                <app-card class="square" [data]="item"></app-card>
+            </div>
+        </div>
+    </div>
+</div>
