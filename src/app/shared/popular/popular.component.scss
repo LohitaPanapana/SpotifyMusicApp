@@ -1,0 +1,11 @@
+.popular{
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 7px;
+    img{
+        width: 35%;
+    }
+}
+.popular:hover{
+    background-color: rgba(255, 255, 255, 0.09);
+}

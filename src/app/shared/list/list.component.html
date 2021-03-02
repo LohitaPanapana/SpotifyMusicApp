@@ -1,0 +1,21 @@
+<div class="list">
+    <h4>{{  header }}</h4>
+    <table class="table table-borderless table-hover">
+        <tbody>
+            <tr *ngFor="let track of tracks; let i=index;">
+                <ng-container *ngIf="i < 4">
+                    <td class="w-25">
+                        <img [src]="track?.album?.images[0]?.url" />
+                    </td>
+                    <td class="w-50">
+                        <h6>{{ track.name }}</h6>
+                        <span class="small-text">{{ track?.artists[0]?.name }}</span>
+                    </td>
+                    <td class="w-25">
+                        {{ track.duration_ms / 60000 | number : '1.1-2'}}
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+</div>
