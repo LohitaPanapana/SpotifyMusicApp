@@ -1,1 +1,12 @@
-<p>card works!</p>
+<div class="record">
+    <a routerLink="#">
+        <div>
+            <img [ngClass]="classes" *ngIf="data?.images[0]?.url" [src]="data?.images[0]?.url" />
+            <img [ngClass]="classes" *ngIf="!data?.images[0]?.url" src="../../../assets/images/user.png" />
+        </div>
+        <div class="text-left">
+            <h6>{{ data?.name.length > 17 ? data?.name.substring(0,17) + '...' : data?.name }}</h6>
+            <span class="text-capitalize">{{ data?.type }}</span>
+        </div>
+    </a>
+</div>

@@ -1,1 +1,15 @@
-<p>cards works!</p>
+<div class="cards">
+    <div class="container">
+        <ng-container *ngIf="type !== 'tracks'">
+            <div class="header">
+                <h4>{{ name }}</h4>
+                <a class="text-right text-muted see-all" (click)="showAll()">SEE ALL</a>
+            </div>
+            <div class="row">
+                <div class="col" *ngFor="let item of data; let i = index">
+                    <app-card [data]="item" *ngIf="i < 4"></app-card>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

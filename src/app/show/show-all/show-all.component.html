@@ -1,14 +1,18 @@
 <div class="show-all">
     <div class="container">
-        <div class="header mb-2">
+        <div class="header mb-4">
             <h4>
-                <a href="" class="btn btn-secondary"><</a>
+                <a class="btn btn-secondary btn-sm" (click)="returnToPreviousScreen()"><</a>
                 All {{ type }} for "{{ query }}"
             </h4>
         </div>
         <div class="row">
             <div class="col mb-2" *ngFor="let item of data">
-                <app-card class="square" [data]="item"></app-card>
+                <app-card 
+                    class="square" 
+                    [data]="item"
+                    (click)="showDetails(item)">
+                </app-card>  
             </div>
         </div>
     </div>

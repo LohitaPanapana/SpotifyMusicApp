@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
+  @Input() searchTerm: string = '';
+  @Input() name: string = '';
+  @Input() type: string = '';
+  @Input() data = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  showAll(){
+    this.router.navigateByUrl(`search/${this.searchTerm}/${this.type}`, {
+      state: {
+        query: this.searchTerm,
+        type: this.type,
+        data: this.data
+      }
+    });
   }
 
 }

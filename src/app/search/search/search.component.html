@@ -1,16 +1,38 @@
-<div class="container">
-    Details:
+<div class="search-container container">
     <div class="p-5 mt-5">
-        <div class="input-group mb-3">
-            <select class="form-control col-md-2">
-                <option value="album">Album</option>
-                <option value="artist">Artist</option>
-                <option value="playlist">Playlist</option>
-                <option value="track">Track</option>
-                <option value="show">Show</option>
-                <option value="episode">Episode</option>
-            </select>
-            <input type="text" class="form-control col-md-10" aria-label="Text input with dropdown button">
-      </div>
+        <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+            <div class="input-group mb-5 d-flex justify-content-center">
+                <!-- <select 
+                    class="form-control col-md-2" 
+                    (change)="onCategoryChange()"
+                    formControlName="type">
+                    <option *ngFor="let category of categories" [value]="category.key">{{ category.label }}</option>
+                </select> -->
+                <input 
+                    type="text" 
+                    class="form-control col-md-6"
+                    formControlName="query"
+                    placeholder="Enter Search term"
+                    aria-label="Query string">
+            </div>
+        </form>
+        <div *ngIf="records">
+            <div class="row">
+                <div class="col">
+                    <app-popular header="Top result" [data]="records['tracks']?.items[0]"></app-popular>
+                </div>
+                <div class="col">
+                    <app-list header="Songs" [tracks]="records['tracks']?.items"></app-list>
+                </div>
+            </div>
+            <ng-container *ngFor="let category of categories">
+                <app-cards 
+                    [searchTerm]="searchForm.controls.query.value"
+                    [name]="category.label" 
+                    [type]="category.key"
+                    [data]="records[category.key]?.items">
+                </app-cards>
+            </ng-container>
+        </div>
     </div>
 </div>
