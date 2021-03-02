@@ -1,1 +1,19 @@
-<p>side-nav works!</p>
+<div class="side-nav mt-5">
+    <a 
+        routerLink="/" 
+        routerLinkActive="active" 
+        [routerLinkActiveOption]="{ extact: true}">
+        <fa-icon [icon]="faHome"></fa-icon>
+        Home
+    </a>
+    <a 
+        routerLink="search" 
+        routerLinkActive="active">
+        Search
+    </a>
+    <a 
+        routerLink="library" 
+        routerLinkActive="active">
+        Your Library
+    </a>
+</div>
