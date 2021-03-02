@@ -1,0 +1,13 @@
+.detail{
+    margin-top: 80px;
+    color: #fff;
+    .card{
+        background-color: tomato;
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%
+        }
+    }
+}

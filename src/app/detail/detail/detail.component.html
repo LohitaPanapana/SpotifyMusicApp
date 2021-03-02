@@ -1,0 +1,16 @@
+<div class="detail">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img class="img-fluid" [src]="data?.images[0].url" [alt]="data?.name">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body d-flex justify-content-center">
+              <h4 class="text-capitalize">{{ data?.type }}</h4>
+              <h1 class="card-title display-3">{{ data?.name }}</h1>
+              <span class="card-text text-secondary">{{ data?.artists[0]?.name }} | {{ data?.tracks?.total }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
