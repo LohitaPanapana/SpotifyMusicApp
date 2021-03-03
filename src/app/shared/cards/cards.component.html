@@ -7,7 +7,11 @@
             </div>
             <div class="row">
                 <div class="col" *ngFor="let item of data; let i = index">
-                    <app-card [data]="item" *ngIf="i < 4"></app-card>
+                    <app-card 
+                        [data]="item" 
+                        *ngIf="i < 4"
+                        (click)="showDetails(item)"
+                    ></app-card>
                 </div>
             </div>
         </ng-container>

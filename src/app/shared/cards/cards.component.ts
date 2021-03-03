@@ -26,4 +26,10 @@ export class CardsComponent implements OnInit {
     });
   }
 
+  showDetails(item){
+    const { type, id, href } = item;
+    this.router.navigateByUrl(`/${type}/${id}`, {
+      state: { href }
+    });
+  }
 }

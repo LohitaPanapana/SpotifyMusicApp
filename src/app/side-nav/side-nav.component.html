@@ -2,18 +2,20 @@
     <a 
         routerLink="/" 
         routerLinkActive="active" 
-        [routerLinkActiveOption]="{ extact: true}">
+        [routerLinkActiveOptions]="{ extact: true}">
         <fa-icon [icon]="faHome"></fa-icon>
         Home
     </a>
     <a 
         routerLink="search" 
         routerLinkActive="active">
+        <fa-icon [icon]="faSearch"></fa-icon>
         Search
     </a>
     <a 
         routerLink="library" 
         routerLinkActive="active">
+        <fa-icon [icon]="faLayerGroup"></fa-icon>
         Your Library
     </a>
 </div>

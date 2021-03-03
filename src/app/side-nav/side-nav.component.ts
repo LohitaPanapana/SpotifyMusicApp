@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSearch, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,6 +8,9 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 })
 export class SideNavComponent implements OnInit {
   faHome = faHome;
+  faSearch=faSearch;
+  faLayerGroup=faLayerGroup;
+  
   constructor() { }
 
   ngOnInit(): void {
