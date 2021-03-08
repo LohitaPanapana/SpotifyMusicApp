@@ -2,12 +2,6 @@
     <div class="p-5 mt-5">
         <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
             <div class="input-group mb-5 d-flex justify-content-center">
-                <!-- <select 
-                    class="form-control col-md-2" 
-                    (change)="onCategoryChange()"
-                    formControlName="type">
-                    <option *ngFor="let category of categories" [value]="category.key">{{ category.label }}</option>
-                </select> -->
                 <input 
                     type="text" 
                     class="form-control col-md-6"

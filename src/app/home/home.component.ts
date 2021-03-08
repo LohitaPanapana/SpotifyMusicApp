@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.route.queryParams.subscribe(({ access_token }) => {
       if(access_token){
         this.service.accessToken.next(access_token);
-        // this.router.navigateByUrl('search');
+        this.router.navigateByUrl('search');
       }
     })
   }

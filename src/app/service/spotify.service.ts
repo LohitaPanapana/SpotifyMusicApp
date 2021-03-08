@@ -44,11 +44,89 @@ export class SpotifyService {
         'Authorization': 'Bearer ' + this.accessToken.getValue()
       }
     });
-    let tracks = this.http.get(`${href}/tracks`, {
-      headers: {
-        'Authorization': 'Bearer ' + this.accessToken.getValue()
-      }
-    });
+    let tracks, episodes;
+
+    if(href.includes('artist')){
+      console.log(href);
+      tracks = this.http.get(`${href}/top-tracks`, {
+        headers: {
+          'Authorization': 'Bearer ' + this.accessToken.getValue()
+        },
+        params: {
+          market: "AD"
+          // "AT",
+          // "AU",
+          // "BE",
+          // "BG",
+          // "BO",
+          // "BR",
+          // "CA",
+          // "CH",
+          // "CL",
+          // "CO",
+          // "CR",
+          // "CY",
+          // "CZ",
+          // "DE",
+          // "DK",
+          // "DO",
+          // "EC",
+          // "EE",
+          // "ES",
+          // "FI",
+          // "FR",
+          // "GB",
+          // "GR",
+          // "GT",
+          // "HK",
+          // "HN",
+          // "HU",
+          // "ID",
+          // "IE",
+          // "IS",
+          // "IT",
+          // "JP",
+          // "LI",
+          // "LT",
+          // "LU",
+          // "LV",
+          // "MC",
+          // "MT",
+          // "MX",
+          // "MY",
+          // "NI",
+          // "NL",
+          // "NO",
+          // "NZ",
+          // "PA",
+          // "PE",
+          // "PH",
+          // "PL",
+          // "PT",
+          // "PY",
+          // "SE",
+          // "SG",
+          // "SK",
+          // "SV",
+          // "TR",
+          // "TW",
+          // "US",
+          // "UY"
+        }
+      });
+    } else if(href.includes('show')){
+      episodes = this.http.get(`${href}/episodes`, {
+        headers: {
+          'Authorization': 'Bearer ' + this.accessToken.getValue()
+        }
+      });
+    } else {
+      tracks = this.http.get(`${href}/tracks`, {
+        headers: {
+          'Authorization': 'Bearer ' + this.accessToken.getValue()
+        }
+      });
+    }
     return forkJoin([details, tracks]);
   }
 }

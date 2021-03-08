@@ -2,7 +2,7 @@
     <h4>{{  header }}</h4>
     <table class="table table-borderless table-hover">
         <tbody>
-            <iframe src="https://open.spotify.com/embed/track/6v3KW9xbzN5yKLt9YKDYA2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <!-- <iframe src="https://open.spotify.com/embed/track/6v3KW9xbzN5yKLt9YKDYA2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
             <tr (click)="playMusic(track)" *ngFor="let track of tracks; let i=index;">
                 <ng-container *ngIf="i < 4">
                     <td class="w-25">
